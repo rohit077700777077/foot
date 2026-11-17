@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>luna.soles — Sole</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sole: {
+              50: '#faf9f7', 100: '#f5f3ef', 200: '#e8e4dc', 300: '#d4cdc0',
+              400: '#b8ad9a', 500: '#9c8f7a', 600: '#7d7262', 700: '#655c50',
+              800: '#544d44', 900: '#47413a',
+            }
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .blur-preview { filter: blur(12px); transform: scale(1.05); }
+  </style>
+</head>
+<body class="bg-sole-50 text-sole-900 antialiased min-h-screen">
+  <!-- Nav -->
+  <nav class="sticky top-0 z-50 bg-sole-50/90 backdrop-blur-md border-b border-sole-200">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="text-xl font-medium tracking-tight">Sole</a>
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <a href="feed.html" class="text-sole-500 hover:text-sole-900 transition">Explore</a>
+        <a href="messages.html" class="text-sole-500 hover:text-sole-900 transition">Messages</a>
+        <a href="dashboard.html" class="text-sole-500 hover:text-sole-900 transition">Dashboard</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="account.html" class="w-9 h-9 rounded-full bg-sole-200 flex items-center justify-center text-sm font-medium">A</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-6 py-10">
+    <!-- Profile Header -->
+    <div class="flex flex-col sm:flex-row gap-8 items-start mb-12">
+      <div class="w-28 h-28 rounded-full bg-gradient-to-br from-sole-200 to-sole-300 shrink-0"></div>
+      <div class="flex-1">
+        <div class="flex flex-wrap items-center gap-3 mb-2">
+          <h1 class="text-2xl font-medium tracking-tight">luna.soles</h1>
+          <span class="px-2.5 py-0.5 text-xs bg-sole-200 rounded-full text-sole-700">Verified</span>
+        </div>
+        <p class="text-sole-600 text-sm mb-4 max-w-md leading-relaxed">
+          Soft natural light. Daily sets. Customs available. I post what feels quiet and beautiful.
+        </p>
+        <div class="flex flex-wrap gap-6 text-sm text-sole-500 mb-6">
+          <span><strong class="text-sole-900 font-medium">24</strong> posts</span>
+          <span><strong class="text-sole-900 font-medium">1.2k</strong> subscribers</span>
+          <span><strong class="text-sole-900 font-medium">$12.99</strong> / month</span>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <button id="subscribe-btn" onclick="toggleSubscribe()"
+            class="px-6 py-2.5 bg-sole-900 text-white rounded-full text-sm font-medium hover:bg-sole-800 transition">
+            Subscribe · $12.99/mo
+          </button>
+          <a href="messages.html" class="px-6 py-2.5 border border-sole-300 rounded-full text-sm font-medium hover:bg-sole-100 transition">
+            Message
+          </a>
+          <button class="px-4 py-2.5 border border-sole-300 rounded-full text-sm hover:bg-sole-100 transition">
+            Tip
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="flex gap-8 border-b border-sole-200 mb-8">
+      <button class="pb-3 text-sm font-medium border-b-2 border-sole-900">Posts</button>
+      <button class="pb-3 text-sm text-sole-500 hover:text-sole-800 transition">About</button>
+      <button class="pb-3 text-sm text-sole-500 hover:text-sole-800 transition">Media</button>
+    </div>
+
+    <!-- Content Grid -->
+    <div id="content-grid" class="grid grid-cols-2 md:grid-cols-3 gap-3">
+      <!-- Locked Post 1 -->
+      <a href="post.html?id=1" class="group relative aspect-square rounded-xl overflow-hidden bg-sole-200 block">
+        <div class="absolute inset-0 bg-gradient-to-br from-sole-200 via-sole-100 to-sole-300 blur-preview"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-10 h-10 rounded-full bg-black/40 backdrop-blur flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          </div>
+        </div>
+        <div class="absolute bottom-2 left-2 right-2 opacity-0 group-hover:opacity-100 transition">
+          <p class="text-xs text-white drop-shadow">Morning light · 12 photos</p>
+        </div>
+      </a>
+
+      <!-- Locked Post 2 -->
+      <a href="post.html?id=2" class="group relative aspect-square rounded-xl overflow-hidden bg-sole-200 block">
+        <div class="absolute inset-0 bg-gradient-to-tr from-sole-300 via-sole-200 to-sole-100 blur-preview"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-10 h-10 rounded-full bg-black/40 backdrop-blur flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Locked Post 3 -->
+      <a href="post.html?id=3" class="group relative aspect-square rounded-xl overflow-hidden bg-sole-200 block">
+        <div class="absolute inset-0 bg-gradient-to-bl from-sole-100 via-sole-300 to-sole-200 blur-preview"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-10 h-10 rounded-full bg-black/40 backdrop-blur flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- More locked items -->
+      <a href="post.html?id=4" class="group relative aspect-square rounded-xl overflow-hidden bg-sole-200 block">
+        <div class="absolute inset-0 bg-gradient-to-t from-sole-300 to-sole-100 blur-preview"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-10 h-10 rounded-full bg-black/40 backdrop-blur flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="post.html?id=5" class="group relative aspect-square rounded-xl overflow-hidden bg-sole-200 block">
+        <div class="absolute inset-0 bg-gradient-to-br from-sole-200 to-sole-400 blur-preview"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-10 h-10 rounded-full bg-black/40 backdrop-blur flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="post.html?id=6" class="group relative aspect-square rounded-xl overflow-hidden bg-sole-200 block">
+        <div class="absolute inset-0 bg-gradient-to-tl from-sole-100 via-sole-200 to-sole-300 blur-preview"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-10 h-10 rounded-full bg-black/40 backdrop-blur flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Subscribe prompt for non-subscribers -->
+    <div id="subscribe-prompt" class="mt-12 p-8 bg-sole-100 rounded-2xl text-center">
+      <h3 class="text-lg font-medium mb-2">Unlock all content</h3>
+      <p class="text-sole-600 text-sm mb-6 max-w-sm mx-auto">
+        Subscribe to luna.soles to see full galleries, new daily sets, and message directly.
+      </p>
+      <button onclick="toggleSubscribe()" class="px-8 py-3 bg-sole-900 text-white rounded-full text-sm font-medium hover:bg-sole-800 transition">
+        Subscribe for $12.99/month
+      </button>
+    </div>
+  </main>
+
+  <script>
+    let subscribed = false;
+    function toggleSubscribe() {
+      subscribed = !subscribed;
+      const btn = document.getElementById('subscribe-btn');
+      const prompt = document.getElementById('subscribe-prompt');
+      const grid = document.getElementById('content-grid');
+      
+      if (subscribed) {
+        btn.textContent = 'Subscribed';
+        btn.classList.remove('bg-sole-900', 'hover:bg-sole-800');
+        btn.classList.add('bg-sole-200', 'text-sole-800');
+        prompt.classList.add('hidden');
+        // Remove blur
+        grid.querySelectorAll('.blur-preview').forEach(el => {
+          el.classList.remove('blur-preview');
+        });
+        grid.querySelectorAll('.absolute.inset-0.flex').forEach(el => {
+          el.style.display = 'none';
+        });
+      } else {
+        btn.textContent = 'Subscribe · $12.99/mo';
+        btn.classList.add('bg-sole-900', 'hover:bg-sole-800', 'text-white');
+        btn.classList.remove('bg-sole-200', 'text-sole-800');
+        prompt.classList.remove('hidden');
+        location.reload(); // simple reset for demo
+      }
+    }
+  </script>
+</body>
+</html>

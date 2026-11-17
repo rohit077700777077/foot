@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore — Sole</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sole: {
+              50: '#faf9f7',
+              100: '#f5f3ef',
+              200: '#e8e4dc',
+              300: '#d4cdc0',
+              400: '#b8ad9a',
+              500: '#9c8f7a',
+              600: '#7d7262',
+              700: '#655c50',
+              800: '#544d44',
+              900: '#47413a',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .locked-overlay {
+      background: linear-gradient(to top, rgba(71,65,58,0.75) 0%, rgba(71,65,58,0.2) 60%, transparent 100%);
+    }
+  </style>
+</head>
+<body class="bg-sole-50 text-sole-900 antialiased min-h-screen">
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-sole-50/90 backdrop-blur-md border-b border-sole-200">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="text-xl font-medium tracking-tight">Sole</a>
+      
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <a href="feed.html" class="font-medium text-sole-900">Explore</a>
+        <a href="messages.html" class="text-sole-500 hover:text-sole-800 transition">Messages</a>
+        <a href="dashboard.html" class="text-sole-500 hover:text-sole-800 transition">Dashboard</a>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="become-creator.html" class="hidden sm:inline-block text-sm text-sole-600 hover:text-sole-900 transition">
+          Become creator
+        </a>
+        <a href="account.html" class="w-9 h-9 rounded-full bg-sole-200 flex items-center justify-center text-sm font-medium">
+          A
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-6 py-10">
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
+      <div>
+        <h1 class="text-2xl font-light tracking-tight mb-2">Explore creators</h1>
+        <p class="text-sole-500 text-sm">Discover exclusive foot content from verified creators</p>
+      </div>
+      <div class="flex gap-2">
+        <button class="px-4 py-2 text-sm bg-sole-900 text-white rounded-full">All</button>
+        <button class="px-4 py-2 text-sm text-sole-600 hover:bg-sole-100 rounded-full transition">Popular</button>
+        <button class="px-4 py-2 text-sm text-sole-600 hover:bg-sole-100 rounded-full transition">New</button>
+      </div>
+    </div>
+
+    <!-- Creator Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Creator Card 1 -->
+      <article class="group">
+        <a href="creator.html" class="block relative aspect-[4/5] rounded-2xl overflow-hidden bg-sole-200 mb-4">
+          <div class="absolute inset-0 bg-gradient-to-br from-sole-200 via-sole-100 to-sole-300"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-24 h-24 rounded-full bg-white/40 backdrop-blur-sm"></div>
+          </div>
+          <div class="absolute inset-0 locked-overlay opacity-0 group-hover:opacity-100 transition flex items-end p-5">
+            <div class="text-white">
+              <p class="text-sm font-medium">Subscribe to unlock</p>
+              <p class="text-xs text-white/80 mt-1">24 sets · Updated 2d ago</p>
+            </div>
+          </div>
+          <div class="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur rounded-full text-xs font-medium">
+            $12.99 / mo
+          </div>
+        </a>
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <a href="creator.html" class="font-medium hover:underline">luna.soles</a>
+            <p class="text-sm text-sole-500 mt-0.5">Soft lighting · Daily sets</p>
+          </div>
+          <a href="creator.html" class="shrink-0 px-4 py-1.5 text-sm border border-sole-300 rounded-full hover:bg-sole-900 hover:text-white hover:border-sole-900 transition">
+            Subscribe
+          </a>
+        </div>
+      </article>
+
+      <!-- Creator Card 2 -->
+      <article class="group">
+        <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-sole-200 mb-4">
+          <div class="absolute inset-0 bg-gradient-to-tr from-sole-300 via-sole-100 to-sole-200"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-20 h-20 rounded-full bg-white/50 backdrop-blur-sm"></div>
+          </div>
+          <div class="absolute inset-0 locked-overlay opacity-0 group-hover:opacity-100 transition flex items-end p-5">
+            <div class="text-white">
+              <p class="text-sm font-medium">Subscribe to unlock</p>
+              <p class="text-xs text-white/80 mt-1">41 sets · Updated yesterday</p>
+            </div>
+          </div>
+          <div class="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur rounded-full text-xs font-medium">
+            $9.99 / mo
+          </div>
+        </div>
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <h3 class="font-medium">aria.feet</h3>
+            <p class="text-sm text-sole-500 mt-0.5">Natural · Minimal</p>
+          </div>
+          <button class="shrink-0 px-4 py-1.5 text-sm border border-sole-300 rounded-full hover:bg-sole-900 hover:text-white hover:border-sole-900 transition">
+            Subscribe
+          </button>
+        </div>
+      </article>
+
+      <!-- Creator Card 3 -->
+      <article class="group">
+        <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-sole-200 mb-4">
+          <div class="absolute inset-0 bg-gradient-to-bl from-sole-200 via-sole-300 to-sole-100"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-28 h-28 rounded-full bg-white/30 backdrop-blur-sm"></div>
+          </div>
+          <div class="absolute inset-0 locked-overlay opacity-0 group-hover:opacity-100 transition flex items-end p-5">
+            <div class="text-white">
+              <p class="text-sm font-medium">Subscribe to unlock</p>
+              <p class="text-xs text-white/80 mt-1">18 sets · Updated 4d ago</p>
+            </div>
+          </div>
+          <div class="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur rounded-full text-xs font-medium">
+            $14.99 / mo
+          </div>
+        </div>
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <h3 class="font-medium">velvet.steps</h3>
+            <p class="text-sm text-sole-500 mt-0.5">Elegant · Custom available</p>
+          </div>
+          <button class="shrink-0 px-4 py-1.5 text-sm border border-sole-300 rounded-full hover:bg-sole-900 hover:text-white hover:border-sole-900 transition">
+            Subscribe
+          </button>
+        </div>
+      </article>
+
+      <!-- Creator Card 4 -->
+      <article class="group">
+        <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-sole-200 mb-4">
+          <div class="absolute inset-0 bg-gradient-to-t from-sole-300 via-sole-200 to-sole-100"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-16 h-16 rounded-full bg-white/60 backdrop-blur-sm"></div>
+          </div>
+          <div class="absolute inset-0 locked-overlay opacity-0 group-hover:opacity-100 transition flex items-end p-5">
+            <div class="text-white">
+              <p class="text-sm font-medium">Subscribe to unlock</p>
+              <p class="text-xs text-white/80 mt-1">33 sets · Updated 1d ago</p>
+            </div>
+          </div>
+          <div class="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur rounded-full text-xs font-medium">
+            $7.99 / mo
+          </div>
+        </div>
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <h3 class="font-medium">soft.soles</h3>
+            <p class="text-sm text-sole-500 mt-0.5">Cozy · High volume</p>
+          </div>
+          <button class="shrink-0 px-4 py-1.5 text-sm border border-sole-300 rounded-full hover:bg-sole-900 hover:text-white hover:border-sole-900 transition">
+            Subscribe
+          </button>
+        </div>
+      </article>
+
+      <!-- Creator Card 5 -->
+      <article class="group">
+        <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-sole-200 mb-4">
+          <div class="absolute inset-0 bg-gradient-to-br from-sole-100 via-sole-200 to-sole-300"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-22 h-22 rounded-full bg-white/40 backdrop-blur-sm"></div>
+          </div>
+          <div class="absolute inset-0 locked-overlay opacity-0 group-hover:opacity-100 transition flex items-end p-5">
+            <div class="text-white">
+              <p class="text-sm font-medium">Subscribe to unlock</p>
+              <p class="text-xs text-white/80 mt-1">12 sets · New creator</p>
+            </div>
+          </div>
+          <div class="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur rounded-full text-xs font-medium">
+            $11.99 / mo
+          </div>
+        </div>
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <h3 class="font-medium">petal.arch</h3>
+            <p class="text-sm text-sole-500 mt-0.5">Artistic · Limited sets</p>
+          </div>
+          <button class="shrink-0 px-4 py-1.5 text-sm border border-sole-300 rounded-full hover:bg-sole-900 hover:text-white hover:border-sole-900 transition">
+            Subscribe
+          </button>
+        </div>
+      </article>
+
+      <!-- Creator Card 6 -->
+      <article class="group">
+        <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-sole-200 mb-4">
+          <div class="absolute inset-0 bg-gradient-to-tl from-sole-200 via-sole-100 to-sole-300"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-26 h-26 rounded-full bg-white/35 backdrop-blur-sm"></div>
+          </div>
+          <div class="absolute inset-0 locked-overlay opacity-0 group-hover:opacity-100 transition flex items-end p-5">
+            <div class="text-white">
+              <p class="text-sm font-medium">Subscribe to unlock</p>
+              <p class="text-xs text-white/80 mt-1">57 sets · Updated today</p>
+            </div>
+          </div>
+          <div class="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur rounded-full text-xs font-medium">
+            $19.99 / mo
+          </div>
+        </div>
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <h3 class="font-medium">noir.feet</h3>
+            <p class="text-sm text-sole-500 mt-0.5">Dark aesthetic · Premium</p>
+          </div>
+          <button class="shrink-0 px-4 py-1.5 text-sm border border-sole-300 rounded-full hover:bg-sole-900 hover:text-white hover:border-sole-900 transition">
+            Subscribe
+          </button>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Load more -->
+    <div class="mt-16 text-center">
+      <button class="px-8 py-3 text-sm border border-sole-300 rounded-full hover:bg-sole-100 transition">
+        Load more creators
+      </button>
+    </div>
+  </main>
+
+  <!-- Simple footer -->
+  <footer class="mt-20 py-10 border-t border-sole-200">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-sole-500">
+      <div class="font-medium text-sole-800">Sole</div>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-sole-800 transition">Terms</a>
+        <a href="#" class="hover:text-sole-800 transition">Privacy</a>
+        <a href="#" class="hover:text-sole-800 transition">Help</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
